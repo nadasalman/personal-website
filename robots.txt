@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://nadasalman.github.io/personal-website//sitemap.xml
+Sitemap: https://nadasalman.github.io/personal-website/sitemap.xml
