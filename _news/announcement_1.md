@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2026-06-01 09:00:00+0200
 inline: true
 related_posts: false
 ---
 
-A simple inline announcement.
+PhD defense completed at Université Paris-Saclay (LISV). Available immediately for robotics engineering positions in Île-de-France.

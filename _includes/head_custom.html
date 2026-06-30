@@ -1,0 +1,26 @@
+<style>
+  /* ── Profile name: centered and bold ── */
+  h1.post-title {
+    font-weight: 700 !important;
+    text-align: center !important;
+  }
+
+  /* ── Subtitle / page description: accent purple ── */
+  p.desc {
+    color: var(--global-theme-color) !important;
+    text-align: center !important;
+  }
+
+  /* ── Always force light mode (disable dark-mode overrides) ── */
+  html[data-theme="dark"],
+  [data-theme="dark"] {
+    --global-bg-color: #ffffff !important;
+    --global-text-color: #000000 !important;
+    --global-text-color-light: #828282 !important;
+    --global-card-bg-color: #ffffff !important;
+    --global-divider-color: rgba(0,0,0,0.1) !important;
+    --global-code-bg-color: rgba(181, 9, 172, 0.05) !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+</style>

@@ -1,0 +1,13 @@
+/* Custom style overrides for Nada SALMAN's personal website */
+
+/* Profile name: centered and bold on all pages */
+h1.post-title {
+  font-weight: 700 !important;
+  text-align: center !important;
+}
+
+/* Subtitle / page description: accent purple on all pages */
+p.desc {
+  color: var(--global-theme-color) !important;
+  text-align: center !important;
+}

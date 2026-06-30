@@ -1,80 +1,42 @@
 ---
 layout: page
-title: project 6
-description: a project with no image
-img:
-importance: 4
-category: fun
+title: Swarm Robotics — PDE-Based Motion Planning
+description: >
+  Diplôme d'Ingénieur graduation project — full hardware build of a 15-robot swarm (7×7 cm each) and a novel fluid-dynamics PDE path planner, benchmarked against APF and graph-based methods over 2000 experiments.
+img: assets/img/swarm_project/swarm_robot_photo.png
+importance: 6
+category: research
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## Context
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+Graduation project for the **Diplôme d'Ingénieur en Mécatronique, Université de Lattaquié** *(Sep 2020 – Jul 2021)*. The goal was to develop a computationally efficient, collision-free path planner for a fleet of non-holonomic robots, and to validate it on a custom-built physical swarm platform.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+## What Was Built
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+- **15 differential-drive robots designed and assembled from scratch** — 7×7 cm footprint, custom PCB, onboard motor drivers, encoders and power management
+- **Centralised ROS control** — overhead stereo camera provides position feedback for all agents; host computer runs the planner and dispatches velocity commands
+- **PDE-based path planner** — solves the steady-state Navier-Stokes equations numerically to generate a smooth velocity vector field; robots follow the field gradient to reach their goals with no local minima and guaranteed path-finding
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+<div class="row mt-3">
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/swarm_project/swarm_robot_photo.png" title="Assembled swarm robot (7×7 cm)" class="img-fluid rounded z-depth-1" %}
   </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/swarm_project/swarm_heatmap.png" title="Performance heatmap — PDE vs APF vs Graph over 2000 experiments" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
-```
+<div class="caption">
+  Left: one of the 15 assembled robots. Right: route performance metric across 2000 simulation experiments in 20 maps — hotter colours indicate worse performance, black cells indicate planner failure. The PDE planner records zero failures across all runs.
+</div>
 
-{% endraw %}
+## Key Results
+
+- **0 path-planning failures** across 2000 experiments (20 maps × 100 start/goal pairs)
+- Outperformed both APF (local minima failures) and graph-based search (lower path quality scores) across all map configurations
+- Produced smooth, curvature-continuous paths directly executable by the non-holonomic robots
+- Full working swarm platform delivered: hardware, firmware, ROS stack and planner integrated and validated
+
+## Technologies
+
+`ROS` · `C++` · `Python` · `MATLAB` · `SolidWorks` · `Custom PCB` · `Stereo camera` · `Navier-Stokes PDE` · `Numerical simulation` · `Linux`

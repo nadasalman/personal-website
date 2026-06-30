@@ -1,0 +1,11 @@
+# Local overrides of plugin-owned files.
+# Generated/maintained via: bundle exec al-folio upgrade overrides audit
+# Reviewed and accepted by site owner.
+
+overrides:
+  - path: _layouts/cv.liquid
+    owner_gem: al_folio_cv
+    reason: >
+      Added a JS-injected download button bar below the post-header,
+      providing two separate PDF download links (Dossier Technique FR
+      and Résumé une page FR) without polluting the description field.
